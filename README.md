@@ -1,16 +1,64 @@
-# React + Vite
+# React To-Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple to-do app built with React. Add, edit, complete, and delete tasks, and filter by status. Tasks are saved in your browser.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add tasks (press Enter or click **Add task**)
+- Mark tasks as done
+- Edit a task by double-clicking it
+- Delete a task
+- Filter by All, Active, or Done
+- Clear all completed tasks
+- Saves tasks in `localStorage`, so they survive a refresh
+- Light and dark mode, following your system setting
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 (hooks: `useState`, `useEffect`)
+- Babel Standalone (compiles JSX in the browser)
+- Plain CSS with CSS variables for theming
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+No build step or installation is needed.
+
+1. Clone the repo:
+   ```bash
+   git clone <your-repo-url>
+   cd <your-repo-folder>
+   ```
+2. Open `index.html` in your browser.
+
+To serve it locally instead:
+
+```bash
+npx serve .
+```
+
+## Project Structure
+
+```
+.
+├── index.html   # App markup, styles, and React code
+└── README.md
+```
+
+## How It Works
+
+- Tasks are stored in React state as `{ id, text, done }` objects.
+- A `useEffect` hook writes the task list to `localStorage` whenever it changes.
+- The initial state is loaded from `localStorage` on first render.
+- The filter and the "left to do" count are derived from the task list.
+
+## Possible Improvements
+
+- Due dates and priorities
+- Drag-and-drop reordering
+- Backend API (Spring Boot + PostgreSQL) for syncing across devices
+- User authentication
+- Migrate to Vite for a production build
+
+## License
+
+MIT
