@@ -15,7 +15,7 @@ function TaskForm({ onAdd }) {
         value={text}
         onChange={(e) => setText(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleAdd()}
-        placeholder="What needs doing?"
+        placeholder="Add a new task..."
       />
       <button className="add-btn" onClick={handleAdd}>Add</button>
     </div>

@@ -51,7 +51,9 @@ function App() {
 
   return (
     <div className="app">
-      <h1>My To Do List</h1>
+      <h1>Gilded Tasks</h1>
+      <p className="subtitle">Your daily agenda, elegantly kept</p>
+      <div className="divider"></div>
 
       <TaskForm onAdd={addTask} />
       <FilterBar filter={filter} onChange={setFilter} />
@@ -69,6 +71,9 @@ function App() {
           
         ))}
       </ul>
+      {visibleTasks.length === 0 && (
+        <p className="empty">Nothing here yet. Add your first task above.</p>
+      )}
 
       <div className="footer">
         <span>{remaining} tasks left</span>

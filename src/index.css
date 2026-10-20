@@ -1,25 +1,48 @@
 body {
   margin: 0;
-  background: #f3f4f6;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  background: radial-gradient(circle at top, #2a2112 0%, #0d0d0d 65%);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  color: #f1e3b5;
 }
 
 .app {
-  background: white;
+  align-self: flex-start;
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   margin: 40px 16px;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  color: #222;
+  padding: 32px;
+  background: rgba(18, 18, 18, 0.9);
+  border: 1px solid #b8932f;
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.18);
 }
 
 h1 {
+  margin: 0;
   text-align: center;
-  margin-top: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 38px;
+  background: linear-gradient(135deg, #f6e27a, #d4af37, #9c7a1e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  text-align: center;
+  font-style: italic;
+  color: #b8a46a;
+}
+
+.divider {
+  height: 1px;
+  margin: 20px 0;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 .add-row {
@@ -29,29 +52,71 @@ h1 {
 
 .add-row input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 10px 12px;
+  background: #141414;
+  border: 1px solid #6b5a2a;
+  border-radius: 4px;
+  color: #f1e3b5;
+  font-family: inherit;
+  font-size: 18px;
+}
+
+.add-row input:focus,
+.edit-input:focus {
+  outline: none;
+  border-color: #d4af37;
 }
 
 button {
-  border: none;
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
   padding: 10px 14px;
   cursor: pointer;
-  font-size: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .add-btn {
-  background: #4f46e5;
-  color: white;
+  background: linear-gradient(135deg, #f6e27a, #d4af37, #9c7a1e);
+  color: #1a1405;
+  font-weight: 700;
+}
+
+.add-btn:hover {
+  filter: brightness(1.1);
 }
 
 .delete-btn {
-  background: #ef4444;
-  color: white;
+  background: transparent;
+  border-color: #8a6d1f;
+  color: #d4af37;
   padding: 6px 10px;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.filters button {
+  background: transparent;
+  border-color: #6b5a2a;
+  color: #b8a46a;
+}
+
+.filters button.active {
+  background: linear-gradient(135deg, #f6e27a, #d4af37, #9c7a1e);
+  border-color: transparent;
+  color: #1a1405;
+  font-weight: 700;
 }
 
 ul {
@@ -63,23 +128,60 @@ ul {
 li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 li span {
   flex: 1;
+  font-size: 20px;
+}
+
+li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #d4af37;
 }
 
 .done {
   text-decoration: line-through;
-  color: #999;
+  color: #7a6a3c;
 }
+
 .edit-input {
   flex: 1;
-  padding: 6px;
-  border: 1px solid #4f46e5;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 6px 10px;
+  background: #141414;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  color: #f1e3b5;
+  font-family: inherit;
+  font-size: 18px;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  color: #7a6a3c;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  color: #b8a46a;
+}
+
+.footer button {
+  background: transparent;
+  border-color: #6b5a2a;
+  color: #b8a46a;
+  font-size: 12px;
+}
+
+.footer button:hover {
+  border-color: #d4af37;
+  color: #d4af37;
 }
